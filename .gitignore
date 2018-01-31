@@ -1,5 +1,6 @@
 node_modules
 .vscode
 .deploy_git
+public
 themes/*
 
