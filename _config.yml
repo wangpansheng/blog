@@ -65,8 +65,9 @@ pagination_dir: page
 ## Themes: https://hexo.io/themes/
 # theme: next
 # theme: yilia
-theme: indigo
+# theme: indigo
 # theme: anodyne
+theme: apollo
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html

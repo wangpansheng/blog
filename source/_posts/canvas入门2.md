@@ -16,8 +16,11 @@ tags: [JS,Canvas,画布]
 
 2. 时钟案例
 
+<!-- more -->
     - 实现效果
        ![cloc](/images/clock.png)
     - 实现思路
 
     1.  ​绘制表盘
+
+## 待续

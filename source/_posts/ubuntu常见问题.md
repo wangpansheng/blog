@@ -3,7 +3,7 @@ title: ubuntu常见问题处理
 tags: [linux,ubuntu ]
 date: 2017-04-02 17:46:19
 ---
-<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=298 height=52 src="//music.163.com/outchain/player?type=0&id=611811413&auto=1&height=32"></iframe>
+ 
 
 
 ##  常见问题处理
@@ -19,6 +19,7 @@ sudo apt-get install ntfs-3g
   sudo ntfsfix /绝对路径
 ```
 
+<!-- more -->
 
 ##  常用软件推荐
 

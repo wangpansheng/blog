@@ -38,6 +38,8 @@ npm install
 -   我们的整体逻辑是，我们路由中添加一个get请求，请求中调用module中的一个操作方法，然后module中的添加方法，再去调用数据库连接，然后在使用操作api操作数据库。
 ##  在module中首先连接到数据库
 
+<!-- more -->
+
 ```js
 //得到MongoClient对象
 var MongoClient = require("mongodb").MongoClient;

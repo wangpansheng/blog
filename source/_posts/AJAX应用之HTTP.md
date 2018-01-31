@@ -50,6 +50,7 @@ tags: [ajax,http]
 	```
 	POST /day08/code/01http/02post.php HTTP/1.1
 	```
+<!-- more -->
 -	请求头
 	```
     Host: 127.0.0.1

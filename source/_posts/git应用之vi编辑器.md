@@ -22,6 +22,7 @@ tags: [git,vi,vim]
 
 ####	末行模式：
 
+<!-- more -->
 1.	:w(小写) 保存；
 
 2.	:w filename	另存为；

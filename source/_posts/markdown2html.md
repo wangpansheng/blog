@@ -15,6 +15,7 @@ tags:   [markdown,转换，html,i5ting_toc]
     npm install -g i5ting_toc
     ```
     
+<!-- more -->
 ##  文件转换
 
    *  安装完成之后，就开始准备转换了，那么我们在你要转换的markdown文件的文件夹，按住shift键右键点击文件夹空白地方，会弹出右键菜单，然后选择“打开命令行窗口”选项，接着在命令行输入以下命令，系统就会自动输出html文件。

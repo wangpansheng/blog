@@ -34,6 +34,7 @@ Shell俗称壳，是指"提供使用者使用界面"的软件，接收用户命�
 * ls(List) 查看当前目录下内容，如ls-al;
 * ls -l 以列表形式产看当前目录内容
 
+<!-- more -->
 * mkdir(Make Directory) 创建目录，可以指定路径创建目录，如mkdir blog;
 
 * touch	创建文件，

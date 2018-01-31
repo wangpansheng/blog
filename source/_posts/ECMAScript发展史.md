@@ -3,7 +3,7 @@ title: ECMAScript发展史
 tags: [ECMA]
 date: 2016-03-18 09:59:57
 ---
-<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=298 height=52 src="//music.163.com/outchain/player?type=0&id=611811413&auto=1&height=32"></iframe>
+ 
 
 -	ECMAScript是一种由Ecma国际（前身为欧洲计算机制造商协会）通过ECMA-262标准化的脚本程序设计语言。这种语言在万维网上应用广泛，它往往被称为JavaScript或JScript，但实际上后两者是ECMA-262标准的实现和扩展。
 ###	目录
@@ -20,6 +20,7 @@ date: 2016-03-18 09:59:57
 1996年11月，网景公司将JavaScript提交给欧洲计算机制造商协会进行标准化。ECMA-262的第一个版本于1997年6月被Ecma组织采纳。
 ECMAScript是由ECMA-262标准化的脚本语言的名称。JavaScript和JScript与ECMAScript相容，但包含超出ECMAScript的功能。
 
+<!-- more -->
 ###	3.	版本
 
 -	至今为止有七个ECMA-262版本发表。

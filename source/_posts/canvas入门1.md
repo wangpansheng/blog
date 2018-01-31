@@ -26,6 +26,8 @@ tags: [JS,canvas,画布]
 * ctx.fill(); 填充一个封闭的图形（将当前路径形成一个封闭图形，然后在填充。）
 * stroke方法与fill方法可以同时调用
 
+<!-- more -->
+
 5. 开启新路径的方法
 * ctx.beginPath();
 

@@ -3,7 +3,7 @@ title: 框架封装之Ajax
 tags: [框架封装，ajax]
 date: 2016-11-17 09:31:26
 ---
-<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=298 height=52 src="//music.163.com/outchain/player?type=0&id=611811413&auto=1&height=32"></iframe>
+ 
 
 ##	ajax请求步骤
 
@@ -19,7 +19,6 @@ date: 2016-11-17 09:31:26
 	-	w3c:XMLHttpRequest
 	-	IE：ActiveXObject
 
-2.	兼容处理
 
 ##	封装Ajax模块
 
@@ -37,6 +36,7 @@ date: 2016-11-17 09:31:26
 	-	要用一个对象来存储上述Ajax配置信息，像jQuery一样，将其放到工厂函数上；
 	放在工厂函数jq上
 
+<!-- more -->
 ###	改造extend方法
 
 1.	如果只传入一个参数，给this扩展成员，

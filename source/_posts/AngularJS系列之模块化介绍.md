@@ -31,6 +31,7 @@ tags:
   
 ## 定义控制器
 
+<!-- more -->
 * 控制器（Controller）作为连接模型（model）和视图（view）的桥梁存在，所以当我们定义好了控制器以后，也就定义好了模型和视图。
 
   ```javascript

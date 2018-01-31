@@ -33,6 +33,7 @@ INFO  Start processing
 INFO  Hexo is running at http://localhost:4000/. Press Ctrl+C to stop.
 ```
 
+<!-- more -->
 ##  4.  创建新文章
 
 ```

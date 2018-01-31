@@ -3,7 +3,7 @@ title: 手动一步一步搭建ss
 tags: []
 date: 2018-01-31 16:02:12
 ---
-<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=298 height=52 src="//music.163.com/outchain/player?type=0&id=611811413&auto=1&height=32"></iframe>
+ 
 
 # 动手安装ss,教程
 
@@ -19,6 +19,7 @@ sudo apt-get install python-pip
 pip install git+https://github.com/shadowsocks/shadowsocks.git@master
 ```
 
+<!-- more -->
 ## 具体使用
 
 #### 直接使用

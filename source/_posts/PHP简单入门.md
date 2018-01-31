@@ -3,7 +3,7 @@ title: PHP简单入门
 date: 2015-08-14 19:52:11
 tags:
 ---
-<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=298 height=52 src="//music.163.com/outchain/player?type=0&id=611811413&auto=1&height=32"></iframe>
+ 
 
 ##	php基础
 
@@ -33,7 +33,7 @@ tags:
 	foo();
 	```
 
--	
+<!-- more -->
 
 ##	数组
 

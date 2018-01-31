@@ -36,6 +36,7 @@ mongo的客户端去连我们的服务器
   + `mongod --dbpath 数据存储路径 --journal --storageEngine=mmapv1`
   mongod --dbpath C:/data/db --journal --storageEngine=mmapv1`
 
+<!-- more -->
 
 ## 基础概念
 

@@ -22,6 +22,7 @@ tags:
 	git pull [remote url] branchName
 	```
 
+<!-- more -->
 2.	如果本地开发完成，要将本地仓库的版本提交到远程仓库，实现共享与项目合并，此时就是用这个指令。
 	```
 	git push [remote url] branchName
