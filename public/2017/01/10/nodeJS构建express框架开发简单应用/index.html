@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+<!-- Baidu Tongji -->
+<script>var _hmt = _hmt || []</script>
+<script async src="//hm.baidu.com/hm.js?wangpansheng"></script>
+<!-- End Baidu Tongji -->
+
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    <title>NodeJS构建express框架开发简单应用 | Pansheng`s Blog | 不积跬步，无以至千里！</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="NodeJS express">
+    <meta name="description" content="使用node express简单构建，配合MongoDB数据库，实现简单的增删改查操作
+
+首先我们需要构建express本地框架结构12express demo//在demo文件夹中构建express结构
+然后我们运行一下，1npm start
+执行之后，我们在浏览器打开localhost:3000就可以看到初始化的页面，
+因为我们是使用 MongoDb数据库，所以需要安装mongodb的n">
+<meta property="og:type" content="article">
+<meta property="og:title" content="NodeJS构建express框架开发简单应用">
+<meta property="og:url" content="https://wangpansheng.github.io/2017/01/10/nodeJS构建express框架开发简单应用/index.html">
+<meta property="og:site_name" content="Pansheng`s Blog">
+<meta property="og:description" content="使用node express简单构建，配合MongoDB数据库，实现简单的增删改查操作
+
+首先我们需要构建express本地框架结构12express demo//在demo文件夹中构建express结构
+然后我们运行一下，1npm start
+执行之后，我们在浏览器打开localhost:3000就可以看到初始化的页面，
+因为我们是使用 MongoDb数据库，所以需要安装mongodb的n">
+<meta property="og:updated_time" content="2017-04-24T09:31:25.817Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="NodeJS构建express框架开发简单应用">
+<meta name="twitter:description" content="使用node express简单构建，配合MongoDB数据库，实现简单的增删改查操作
+
+首先我们需要构建express本地框架结构12express demo//在demo文件夹中构建express结构
+然后我们运行一下，1npm start
+执行之后，我们在浏览器打开localhost:3000就可以看到初始化的页面，
+因为我们是使用 MongoDb数据库，所以需要安装mongodb的n">
+    
+        <link rel="alternative" href="/atom.xml" title="Pansheng`s Blog" type="application/atom+xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="/css/style.css?v=1.4.11">
+    <script>window.lazyScripts=[]</script>
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/images/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">Pansheng</h5>
+          <a href="mailto:好玩，好玩，就是好玩！！！" title="好玩，好玩，就是好玩！！！" class="mail">好玩，好玩，就是好玩！！！</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                日志
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                标签
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/wangpansheng" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="http://weibo.com/u/5598490525" target="_blank" >
+                <i class="icon icon-lg icon-weibo"></i>
+                微博
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/404.html"  >
+                <i class="icon icon-lg icon-link"></i>
+                公益404
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">NodeJS构建express框架开发简单应用</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">NodeJS构建express框架开发简单应用</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2017-01-10T13:39:28.000Z" itemprop="datePublished" class="page-time">
+  2017-01-10
+</time>
+
+
+            
+        </h5>
+    </div>
+
+    
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#首先我们需要构建express本地框架结构"><span class="post-toc-number">1.</span> <span class="post-toc-text">首先我们需要构建express本地框架结构</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#然后我们运行一下，"><span class="post-toc-number">2.</span> <span class="post-toc-text">然后我们运行一下，</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#因为我们是使用-MongoDb数据库，所以需要安装mongodb的nodeJS包，"><span class="post-toc-number">3.</span> <span class="post-toc-text">因为我们是使用 MongoDb数据库，所以需要安装mongodb的nodeJS包，</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#我们使用MVC架构来实现针对数据库的增删改查，"><span class="post-toc-number">4.</span> <span class="post-toc-text">我们使用MVC架构来实现针对数据库的增删改查，</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#在module中首先连接到数据库"><span class="post-toc-number">5.</span> <span class="post-toc-text">在module中首先连接到数据库</span></a></li></ol>
+        </nav>
+    </aside>
+    
+<article id="post-nodeJS构建express框架开发简单应用"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">NodeJS构建express框架开发简单应用</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2017年01月10日 21:39" datetime="2017-01-10T13:39:28.000Z"  itemprop="datePublished">2017-01-10</time>
+
+            
+
+
+            
+
+            
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <blockquote>
+<p>  使用node express简单构建，配合MongoDB数据库，实现简单的增删改查操作</p>
+</blockquote>
+<h2 id="首先我们需要构建express本地框架结构"><a href="#首先我们需要构建express本地框架结构" class="headerlink" title="首先我们需要构建express本地框架结构"></a>首先我们需要构建express本地框架结构</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">express demo</div><div class="line">//在demo文件夹中构建express结构</div></pre></td></tr></table></figure>
+<h2 id="然后我们运行一下，"><a href="#然后我们运行一下，" class="headerlink" title="然后我们运行一下，"></a>然后我们运行一下，</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm start</div></pre></td></tr></table></figure>
+<p>执行之后，我们在浏览器打开localhost:3000就可以看到初始化的页面，</p>
+<h2 id="因为我们是使用-MongoDb数据库，所以需要安装mongodb的nodeJS包，"><a href="#因为我们是使用-MongoDb数据库，所以需要安装mongodb的nodeJS包，" class="headerlink" title="因为我们是使用 MongoDb数据库，所以需要安装mongodb的nodeJS包，"></a>因为我们是使用 MongoDb数据库，所以需要安装mongodb的nodeJS包，</h2><p>mongodb包的api基本上mongodb数据库的命令行操作命令差不多，所以，如果你比较清楚命令行操作命令，使用起来就会非常方便，<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">//安装mongodb包</div><div class="line">npm install mongodb --save</div><div class="line">//安装依赖包</div><div class="line">npm install</div></pre></td></tr></table></figure></p>
+<p>至此，所有的准备工作基本完成，当然，前提你已经装好mongodb数据库，而且在使用的时候，需要全程开启数据库服务器。mongodb数据库的安装，我以前有文章有介绍过，有兴趣的可以去看看。</p>
+<h2 id="我们使用MVC架构来实现针对数据库的增删改查，"><a href="#我们使用MVC架构来实现针对数据库的增删改查，" class="headerlink" title="我们使用MVC架构来实现针对数据库的增删改查，"></a>我们使用MVC架构来实现针对数据库的增删改查，</h2><ul>
+<li>我们创建一个文件夹 module，就是连接控制数据库的文件。</li>
+<li>我们使用routes来代替controller同样的功能，来连接视图层和数据库的连接。</li>
+<li>我们的整体逻辑是，我们路由中添加一个get请求，请求中调用module中的一个操作方法，然后module中的添加方法，再去调用数据库连接，然后在使用操作api操作数据库。<h2 id="在module中首先连接到数据库"><a href="#在module中首先连接到数据库" class="headerlink" title="在module中首先连接到数据库"></a>在module中首先连接到数据库</h2></li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//得到MongoClient对象</span></div><div class="line"><span class="keyword">var</span> MongoClient = <span class="built_in">require</span>(<span class="string">"mongodb"</span>).MongoClient;</div><div class="line"><span class="keyword">var</span> url = <span class="string">"数据库主机ip:port/数据库名"</span></div><div class="line"></div><div class="line"><span class="built_in">module</span>.exports = <span class="function"><span class="keyword">function</span>(<span class="params">callback</span>)</span>&#123;</div><div class="line"></div><div class="line">    MongoClient.connect(url,<span class="function"><span class="keyword">function</span>(<span class="params">err,db</span>)</span>&#123;</div><div class="line">        <span class="keyword">if</span>(err)&#123;</div><div class="line">            <span class="comment">//代表连接失败</span></div><div class="line">        <span class="keyword">return</span> callback(err);</div><div class="line">        &#125;</div><div class="line">        callback(<span class="literal">null</span>,db)</div><div class="line">    &#125;)</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    <div class="content">
+        <!--
+<span class="post-time">
+    最后更新时间：<time datetime="2017-04-24T09:31:25.817Z" itemprop="dateUpdated">2017年4月24日 17:31</time>
+</span><br>
+
+-->
+        原创文章，转载请注明出处：<a href="/2017/01/10/nodeJS构建express框架开发简单应用/" target="_blank" rel="external">https://wangpansheng.github.io/2017/01/10/nodeJS构建express框架开发简单应用/</a>
+    </div>
+    <footer>
+        <a href="https://wangpansheng.github.io">
+            <img src="/images/avatar.jpg" alt="Pansheng">
+            Pansheng
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/NodeJS-express/">NodeJS express</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://wangpansheng.github.io/2017/01/10/nodeJS构建express框架开发简单应用/&title=《NodeJS构建express框架开发简单应用》 — Pansheng`s Blog&pic=https://wangpansheng.github.io/images/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://wangpansheng.github.io/2017/01/10/nodeJS构建express框架开发简单应用/&title=《NodeJS构建express框架开发简单应用》 — Pansheng`s Blog&source=攀升的学习记录" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://wangpansheng.github.io/2017/01/10/nodeJS构建express框架开发简单应用/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《NodeJS构建express框架开发简单应用》 — Pansheng`s Blog&url=https://wangpansheng.github.io/2017/01/10/nodeJS构建express框架开发简单应用/&via=https://wangpansheng.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://wangpansheng.github.io/2017/01/10/nodeJS构建express框架开发简单应用/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2017/03/03/centos-01/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">centos-01</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2017/01/09/MongoDB简单学习/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">MongoDB数据库配合NodeJS简单使用</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+
+        <p>
+            <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            <span>博客内容遵循 <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">知识共享 署名 - 非商业性 - 相同方式共享 4.0协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p>
+            <span>Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a></span>
+            <span>Pansheng`s Blog &copy; 2016 - 2018</span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://wangpansheng.github.io/2017/01/10/nodeJS构建express框架开发简单应用/&title=《NodeJS构建express框架开发简单应用》 — Pansheng`s Blog&pic=https://wangpansheng.github.io/images/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://wangpansheng.github.io/2017/01/10/nodeJS构建express框架开发简单应用/&title=《NodeJS构建express框架开发简单应用》 — Pansheng`s Blog&source=攀升的学习记录" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://wangpansheng.github.io/2017/01/10/nodeJS构建express框架开发简单应用/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《NodeJS构建express框架开发简单应用》 — Pansheng`s Blog&url=https://wangpansheng.github.io/2017/01/10/nodeJS构建express框架开发简单应用/&via=https://wangpansheng.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://wangpansheng.github.io/2017/01/10/nodeJS构建express框架开发简单应用/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPYAAAD2CAAAAADAeSUUAAADMElEQVR42u3awY7iQAwE0Pn/n2avK80SquysBM3LCZFMk9eHsezqn5/4evx1Pbv7+/Ozu79XS55p3+qGCxsbG/tD2I/L69kPXN99xr7+Pn+T67e6XgEbGxv7VHZelvJiM9vK63LYls+n32NjY2N/PTtpOdpSl6yflzdsbGxs7E0Be5RX3lpcbxA2Njb2N7PbwtCO+O8dUbW/i42NjX02O09F3//zf8m3sbGxsd+YPWsY8q1pR0j5OGmlwMbGxj6I3YapM0x+KLPd0Nn7Y2NjY5/ETkZIm7HRhrQaBl1vFjY2NvZB7PahvCC1jHYTZ+sM9wYbGxv7jdn5cZnkEMywEyqD4TwAjs4oYWNjYx/Bbo/s3HWgZ/N8HkUPg15sbGzsD2TPwtec0YL3b4WNjY39bexNfJs3ErOYYRYbF6kINjY29nHsG84BlXFCO7raFFdsbGzs89htIUlebtZ+tGOmWRiMjY2NfRL7+t99Hh7kq+XFr414803HxsbGPomdNx750nlU3MYM7cDr6frY2NjYB7H3w/o2cE1C3PabpO25rQ/DxsbGfmP2LEydNTPt8OiuUvePAoaNjY394ezZQGcf/eYDqdlhoCLfxsbGxv5wdh6yzo7dbBqPTYwRlU9sbGzsI9izJiGPEKKjM5clcx88F+MkbGxs7A9n50FvXSHLaCHfymGLgo2NjX0ce7NofkCnDQY2rc6LZ7CxsbEPZedlLI9m26FP0kHMYuZ6IWxsbOwPZ7dDnDZI2B/Z2SiwsbGxT2K3o/nNUCk/7pNfeTnExsbGPpu9OQqzH+XnZWy/wm0ngLCxsbHfmN2WjXbj2taibTzyZ7CxsbG/h70PetsiVLx62aJgY2Njn83Ox0Z3DX3quVe5BS+exMbGxj6C/Siv2V+1zUnetAz/ChsbG/sgdluKkiKXlKKkRM2OB83iZ2xsbOxPZ7dDontHSHVAGxewF3exsbGxj2O3cWk++skP97SBxKYAY2NjY2O3gGTjNrFE3pBgY2NjY7cb0Q6DknXaMoaNjY39Dew8gm3Dg9lAP2972lEXNjY29nnsvADcNU6alZ/ZAZ0b8m1sbGzs92X/ATu62YXR2VEWAAAAAElFTkSuQmCC" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
+
+
+
+lazyScripts.push('//s95.cnzz.com/z_stat.php?id=1261513673&web_id=1261513673')
+
+</script>
+
+<script src="/js/main.min.js?v=1.4.11"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="/js/search.min.js?v=1.4.11" async></script>
+
+
+
+
+
+
+
+</body>
+</html>

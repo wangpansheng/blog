@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+<!-- Baidu Tongji -->
+<script>var _hmt = _hmt || []</script>
+<script async src="//hm.baidu.com/hm.js?wangpansheng"></script>
+<!-- End Baidu Tongji -->
+
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    <title>把markdown文件转换为html文件 | Pansheng`s Blog | 不积跬步，无以至千里！</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="markdown,转换，html,i5ting_toc">
+    <meta name="description" content="MarkDown自动转换html页面
+因为markdown语法的方便，平常我经常用markdown来做一些笔记，但有时候需要把md文件转换成html页面，所以现在就把转换方法简单记录下，方便大家学习。不过肯定有别的更好的方法，如果你看到了，觉得你有更好的方法，希望你能不吝赐教，交流学习！
+
+插件安装
+首先第一步肯定是安装转换工具了，我现在用的是i5ting_toc这个工具，这个工具是依赖node的">
+<meta property="og:type" content="article">
+<meta property="og:title" content="把markdown文件转换为html文件">
+<meta property="og:url" content="https://wangpansheng.github.io/2016/01/13/markdown2html/index.html">
+<meta property="og:site_name" content="Pansheng`s Blog">
+<meta property="og:description" content="MarkDown自动转换html页面
+因为markdown语法的方便，平常我经常用markdown来做一些笔记，但有时候需要把md文件转换成html页面，所以现在就把转换方法简单记录下，方便大家学习。不过肯定有别的更好的方法，如果你看到了，觉得你有更好的方法，希望你能不吝赐教，交流学习！
+
+插件安装
+首先第一步肯定是安装转换工具了，我现在用的是i5ting_toc这个工具，这个工具是依赖node的">
+<meta property="og:updated_time" content="2017-04-24T09:31:01.077Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="把markdown文件转换为html文件">
+<meta name="twitter:description" content="MarkDown自动转换html页面
+因为markdown语法的方便，平常我经常用markdown来做一些笔记，但有时候需要把md文件转换成html页面，所以现在就把转换方法简单记录下，方便大家学习。不过肯定有别的更好的方法，如果你看到了，觉得你有更好的方法，希望你能不吝赐教，交流学习！
+
+插件安装
+首先第一步肯定是安装转换工具了，我现在用的是i5ting_toc这个工具，这个工具是依赖node的">
+    
+        <link rel="alternative" href="/atom.xml" title="Pansheng`s Blog" type="application/atom+xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="/css/style.css?v=1.4.11">
+    <script>window.lazyScripts=[]</script>
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/images/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">Pansheng</h5>
+          <a href="mailto:好玩，好玩，就是好玩！！！" title="好玩，好玩，就是好玩！！！" class="mail">好玩，好玩，就是好玩！！！</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                日志
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                标签
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/wangpansheng" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="http://weibo.com/u/5598490525" target="_blank" >
+                <i class="icon icon-lg icon-weibo"></i>
+                微博
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/404.html"  >
+                <i class="icon icon-lg icon-link"></i>
+                公益404
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">把markdown文件转换为html文件</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">把markdown文件转换为html文件</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2016-01-13T05:57:39.000Z" itemprop="datePublished" class="page-time">
+  2016-01-13
+</time>
+
+
+            
+        </h5>
+    </div>
+
+    
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#MarkDown自动转换html页面"><span class="post-toc-number">1.</span> <span class="post-toc-text">MarkDown自动转换html页面</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#插件安装"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">插件安装</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#文件转换"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">文件转换</span></a></li></ol></li></ol>
+        </nav>
+    </aside>
+    
+<article id="post-markdown2html"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">把markdown文件转换为html文件</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2016年01月13日 13:57" datetime="2016-01-13T05:57:39.000Z"  itemprop="datePublished">2016-01-13</time>
+
+            
+
+
+            
+
+            
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h1 id="MarkDown自动转换html页面"><a href="#MarkDown自动转换html页面" class="headerlink" title="MarkDown自动转换html页面"></a>MarkDown自动转换html页面</h1><ul>
+<li>因为markdown语法的方便，平常我经常用markdown来做一些笔记，但有时候需要把md文件转换成html页面，所以现在就把转换方法简单记录下，方便大家学习。不过肯定有别的更好的方法，如果你看到了，觉得你有更好的方法，希望你能不吝赐教，交流学习！</li>
+</ul>
+<h2 id="插件安装"><a href="#插件安装" class="headerlink" title="插件安装"></a>插件安装</h2><ul>
+<li>首先第一步肯定是安装转换工具了，我现在用的是i5ting_toc这个工具，这个工具是依赖node的，所以需要先安装node的，node的详细安装方法，这里就不细说了，如果不会的，可以去问问老李（百度），</li>
+<li><p>然后在npm中执行以下命令，npm会自动安装，</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install -g i5ting_toc</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="文件转换"><a href="#文件转换" class="headerlink" title="文件转换"></a>文件转换</h2><ul>
+<li><p>安装完成之后，就开始准备转换了，那么我们在你要转换的markdown文件的文件夹，按住shift键右键点击文件夹空白地方，会弹出右键菜单，然后选择“打开命令行窗口”选项，接着在命令行输入以下命令，系统就会自动输出html文件。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">i5ting_toc -f note.md -o</div><div class="line">//note.md 为需要转换的文件名</div><div class="line">//-o 在转换完成之后会自动打开html页面</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<ul>
+<li>完毕，至此，我们的文件已经转换完成了，至于更换模板什么的，我现在还不知道怎么弄，望知道的大神指点一二。不胜感激！</li>
+</ul>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    <div class="content">
+        <!--
+<span class="post-time">
+    最后更新时间：<time datetime="2017-04-24T09:31:01.077Z" itemprop="dateUpdated">2017年4月24日 17:31</time>
+</span><br>
+
+-->
+        原创文章，转载请注明出处：<a href="/2016/01/13/markdown2html/" target="_blank" rel="external">https://wangpansheng.github.io/2016/01/13/markdown2html/</a>
+    </div>
+    <footer>
+        <a href="https://wangpansheng.github.io">
+            <img src="/images/avatar.jpg" alt="Pansheng">
+            Pansheng
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/i5ting-toc/">i5ting_toc</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/markdown/">markdown</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/转换，html/">转换，html</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://wangpansheng.github.io/2016/01/13/markdown2html/&title=《把markdown文件转换为html文件》 — Pansheng`s Blog&pic=https://wangpansheng.github.io/images/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://wangpansheng.github.io/2016/01/13/markdown2html/&title=《把markdown文件转换为html文件》 — Pansheng`s Blog&source=攀升的学习记录" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://wangpansheng.github.io/2016/01/13/markdown2html/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《把markdown文件转换为html文件》 — Pansheng`s Blog&url=https://wangpansheng.github.io/2016/01/13/markdown2html/&via=https://wangpansheng.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://wangpansheng.github.io/2016/01/13/markdown2html/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2016/01/14/markdown基本语法/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">markdown基本语法</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2015/08/14/PHP简单入门/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">PHP简单入门</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+
+        <p>
+            <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            <span>博客内容遵循 <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">知识共享 署名 - 非商业性 - 相同方式共享 4.0协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p>
+            <span>Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a></span>
+            <span>Pansheng`s Blog &copy; 2016 - 2018</span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://wangpansheng.github.io/2016/01/13/markdown2html/&title=《把markdown文件转换为html文件》 — Pansheng`s Blog&pic=https://wangpansheng.github.io/images/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://wangpansheng.github.io/2016/01/13/markdown2html/&title=《把markdown文件转换为html文件》 — Pansheng`s Blog&source=攀升的学习记录" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://wangpansheng.github.io/2016/01/13/markdown2html/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《把markdown文件转换为html文件》 — Pansheng`s Blog&url=https://wangpansheng.github.io/2016/01/13/markdown2html/&via=https://wangpansheng.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://wangpansheng.github.io/2016/01/13/markdown2html/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACOElEQVR42u3ay27DMAxE0fz/T6tAVwVcETOkHcCjq1XQxLaOFywf+nzktX6X8vf1Z9XXXr+9XnvzggEDxmsZq1zKw/St7Nj1neu9wYAB4xyGGwqXsHa/rO+vBGsYMGDA2D2m93s31MKAAQPGPOAqRaYbXievDAYMGOcw9PTurlJW2fojtTgMGDBeyHAHA9/8/OB8AwYMGC9hLHNNpod6oWvvCgYMGNEMvTVWJ3w6e55ibl8oDBgwQhmTRE0fVSoBWnlNt+WtMGDAeBXDvdhN++o72K3/upEHAwaMUIabzLmhsDc80EvfbS0OAwaMOEav9947QuHeR9oJDBgwohluQasXw/NjGToYBgwY2Qy31HQfefMEo/6/AQMGjFDGvOzUP+sJZW/wCQMGjFSGW1i6RzTcMYDbaIMBA8ZpDP3B82MWva1LI0wYMGCEMp4Or3VYn/D+mW/AgAEjjtFrzbuHLdxhp7J1GDBgnMPQk7xJsjgpU5XSFwYMGNkM/UDY5Nve1t3EFAYMGKkMNyz2jlNM3qvSwoMBA8YJjN5wsUbq6WZzbHnNcGHAgBHKcNv3SgjuHRTTk9TttTBgwAhlLHPN00q3eSeFYxgwYEQzek03d9zotvOaqSEMGDCiGUqQ7QVW/dDG5PcwYMA4h+EG0PnxC3dJg0wYMGAcz3ATuN4YQMlkt11DGDBgwJCHne6G3Fe2HQ/AgAEjmuEemOiNPN3Wv3H4AwYMGNGMSQHpFrcK6a7DajBgwIhg/AA3e9E/0dZwDwAAAABJRU5ErkJggg==" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
+
+
+
+lazyScripts.push('//s95.cnzz.com/z_stat.php?id=1261513673&web_id=1261513673')
+
+</script>
+
+<script src="/js/main.min.js?v=1.4.11"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="/js/search.min.js?v=1.4.11" async></script>
+
+
+
+
+
+
+
+</body>
+</html>

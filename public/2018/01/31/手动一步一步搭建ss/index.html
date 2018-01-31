@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+<!-- Baidu Tongji -->
+<script>var _hmt = _hmt || []</script>
+<script async src="//hm.baidu.com/hm.js?wangpansheng"></script>
+<!-- End Baidu Tongji -->
+
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    <title>手动一步一步搭建ss | Pansheng`s Blog | 不积跬步，无以至千里！</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="">
+    <meta name="description" content="动手安装ss,教程安装具体步骤 我用的是Ubuntu系统，安装步骤非常简单，一步一步执行下面的命令就好
+12345sudo apt-get updata&amp;lt;!-- 如果服务器没有安装git，需要执行这一步 --&amp;gt;sudo apt-get install gitsudo apt-get install python-pippip install git+https://github.c">
+<meta property="og:type" content="article">
+<meta property="og:title" content="手动一步一步搭建ss">
+<meta property="og:url" content="https://wangpansheng.github.io/2018/01/31/手动一步一步搭建ss/index.html">
+<meta property="og:site_name" content="Pansheng`s Blog">
+<meta property="og:description" content="动手安装ss,教程安装具体步骤 我用的是Ubuntu系统，安装步骤非常简单，一步一步执行下面的命令就好
+12345sudo apt-get updata&amp;lt;!-- 如果服务器没有安装git，需要执行这一步 --&amp;gt;sudo apt-get install gitsudo apt-get install python-pippip install git+https://github.c">
+<meta property="og:updated_time" content="2018-01-31T08:02:58.494Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="手动一步一步搭建ss">
+<meta name="twitter:description" content="动手安装ss,教程安装具体步骤 我用的是Ubuntu系统，安装步骤非常简单，一步一步执行下面的命令就好
+12345sudo apt-get updata&amp;lt;!-- 如果服务器没有安装git，需要执行这一步 --&amp;gt;sudo apt-get install gitsudo apt-get install python-pippip install git+https://github.c">
+    
+        <link rel="alternative" href="/atom.xml" title="Pansheng`s Blog" type="application/atom+xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="/css/style.css?v=1.4.11">
+    <script>window.lazyScripts=[]</script>
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/images/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">Pansheng</h5>
+          <a href="mailto:好玩，好玩，就是好玩！！！" title="好玩，好玩，就是好玩！！！" class="mail">好玩，好玩，就是好玩！！！</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                日志
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                标签
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/wangpansheng" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="http://weibo.com/u/5598490525" target="_blank" >
+                <i class="icon icon-lg icon-weibo"></i>
+                微博
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/404.html"  >
+                <i class="icon icon-lg icon-link"></i>
+                公益404
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">手动一步一步搭建ss</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">手动一步一步搭建ss</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2018-01-31T08:02:12.000Z" itemprop="datePublished" class="page-time">
+  2018-01-31
+</time>
+
+
+            
+        </h5>
+    </div>
+
+    
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#动手安装ss-教程"><span class="post-toc-number">1.</span> <span class="post-toc-text">动手安装ss,教程</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#安装具体步骤"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">安装具体步骤</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#具体使用"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">具体使用</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#直接使用"><span class="post-toc-number">1.2.0.1.</span> <span class="post-toc-text">直接使用</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#后台使用"><span class="post-toc-number">1.2.0.2.</span> <span class="post-toc-text">后台使用</span></a></li></ol></li></ol></li></ol></li></ol>
+        </nav>
+    </aside>
+    
+<article id="post-手动一步一步搭建ss"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">手动一步一步搭建ss</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2018年01月31日 16:02" datetime="2018-01-31T08:02:12.000Z"  itemprop="datePublished">2018-01-31</time>
+
+            
+
+
+            
+
+            
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="298" height="52" src="//music.163.com/outchain/player?type=0&id=611811413&auto=1&height=32"></iframe>
+
+<h1 id="动手安装ss-教程"><a href="#动手安装ss-教程" class="headerlink" title="动手安装ss,教程"></a>动手安装ss,教程</h1><h2 id="安装具体步骤"><a href="#安装具体步骤" class="headerlink" title="安装具体步骤"></a>安装具体步骤</h2><p> 我用的是Ubuntu系统，安装步骤非常简单，一步一步执行下面的命令就好</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">sudo apt-get updata</div><div class="line">&lt;!-- 如果服务器没有安装git，需要执行这一步 --&gt;</div><div class="line">sudo apt-get install git</div><div class="line">sudo apt-get install python-pip</div><div class="line">pip install git+https://github.com/shadowsocks/shadowsocks.git@master</div></pre></td></tr></table></figure>
+<h2 id="具体使用"><a href="#具体使用" class="headerlink" title="具体使用"></a>具体使用</h2><h4 id="直接使用"><a href="#直接使用" class="headerlink" title="直接使用"></a>直接使用</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ssserver -c /etc/shadowsocks.json</div></pre></td></tr></table></figure>
+<h4 id="后台使用"><a href="#后台使用" class="headerlink" title="后台使用"></a>后台使用</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">ssserver -c /etc/shadowsocks.json -d start</div><div class="line">ssserver -c /etc/shadowsocks.json -d stop</div></pre></td></tr></table></figure>
+        </div>
+
+        <blockquote class="post-copyright">
+    <div class="content">
+        <!--
+<span class="post-time">
+    最后更新时间：<time datetime="2018-01-31T08:02:58.494Z" itemprop="dateUpdated">2018年1月31日 16:02</time>
+</span><br>
+
+-->
+        原创文章，转载请注明出处：<a href="/2018/01/31/手动一步一步搭建ss/" target="_blank" rel="external">https://wangpansheng.github.io/2018/01/31/手动一步一步搭建ss/</a>
+    </div>
+    <footer>
+        <a href="https://wangpansheng.github.io">
+            <img src="/images/avatar.jpg" alt="Pansheng">
+            Pansheng
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://wangpansheng.github.io/2018/01/31/手动一步一步搭建ss/&title=《手动一步一步搭建ss》 — Pansheng`s Blog&pic=https://wangpansheng.github.io/images/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://wangpansheng.github.io/2018/01/31/手动一步一步搭建ss/&title=《手动一步一步搭建ss》 — Pansheng`s Blog&source=攀升的学习记录" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://wangpansheng.github.io/2018/01/31/手动一步一步搭建ss/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《手动一步一步搭建ss》 — Pansheng`s Blog&url=https://wangpansheng.github.io/2018/01/31/手动一步一步搭建ss/&via=https://wangpansheng.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://wangpansheng.github.io/2018/01/31/手动一步一步搭建ss/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2017/07/11/css变形/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">css变形</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+
+        <p>
+            <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            <span>博客内容遵循 <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">知识共享 署名 - 非商业性 - 相同方式共享 4.0协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p>
+            <span>Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a></span>
+            <span>Pansheng`s Blog &copy; 2016 - 2018</span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://wangpansheng.github.io/2018/01/31/手动一步一步搭建ss/&title=《手动一步一步搭建ss》 — Pansheng`s Blog&pic=https://wangpansheng.github.io/images/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://wangpansheng.github.io/2018/01/31/手动一步一步搭建ss/&title=《手动一步一步搭建ss》 — Pansheng`s Blog&source=攀升的学习记录" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://wangpansheng.github.io/2018/01/31/手动一步一步搭建ss/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《手动一步一步搭建ss》 — Pansheng`s Blog&url=https://wangpansheng.github.io/2018/01/31/手动一步一步搭建ss/&via=https://wangpansheng.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://wangpansheng.github.io/2018/01/31/手动一步一步搭建ss/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACtUlEQVR42u3aQU7DQAwF0N7/0iCxgkWGb3tchPSyqkKa+KXSjLH9esXHx9fx/fP3M+drzlfm55/+euHAw8PDa4X+dDw9oIc5f+t8h9538fDw8PZ4k83glwe0Vu/kfLS14OHh4f0pb45PlvskpcbDw8P7j7xJ0nx+ZZN48PDw8N7Jy0PJiwJJkt1L1ldqLXh4eHidZ716S//7P6/39/Dw8PBaXfVq+z9ZoPOyQi/CH/fHw8PDW+D1mkzVUm9eAs5fZWEwCw8PD2+BV12OkyW+upHkZdwLrwMPDw9vwOst0JMUfLJJNP9jwMPDw1vgTZb4HDlvZZWHEvDw8PAWeNVCQ3UI4Jwcz5Pmy+MCeHh4eAFvXjLoNckmQ7GFlB0PDw9vjVfdQ3rlg0m7q7nL4eHh4a3xJgtxtXF1eSD1HAkeHh7eAi8fXeoVJpJ79lpczdErPDw8vKu8vLQ6X6B74Y42GDw8PLxLvGoDPjmTbzO936FQ/sDDw8Nb4PVCHI06tQofveIIHh4e3gYv3wZ6KXW1pJtfEw0x4OHh4a3xJolvnuCW96tWgv7L0BUeHh7eVV616JAv3ElqXh0RKOfpeHh4eJd4k2ZVEnoebv5Cq6VkPDw8vLu8vER7azig0LiKk/jC74aHh4c35lVLDHlw1RcxabkVRgfw8PDwxrxeDl5thvU2oXPaHd0NDw8P74941YAmmN7oAB4eHt47edUmU7VQW+1SVV9EORI8PDy8MW9SekhKq9W6SL5hRDHg4eHhLfDuLtwbgPPL6m0keHh4eHNetcWVlwnyQu1G2RcPDw9vm7dXesg3klvPfZyMwMPDw3s7L1/iz9cXlvX4xV3YGPDw8PDWeNVEPFnuq+A8EcfDw8Pb4/WKEfM6cULNY3tMqfHw8PCu8npB9Iqtd2fERj09PDw8vA7vE+cAu2DNkdRhAAAAAElFTkSuQmCC" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
+
+
+
+lazyScripts.push('//s95.cnzz.com/z_stat.php?id=1261513673&web_id=1261513673')
+
+</script>
+
+<script src="/js/main.min.js?v=1.4.11"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="/js/search.min.js?v=1.4.11" async></script>
+
+
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+<!-- Baidu Tongji -->
+<script>var _hmt = _hmt || []</script>
+<script async src="//hm.baidu.com/hm.js?wangpansheng"></script>
+<!-- End Baidu Tongji -->
+
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    <title>hexo搭建博客常见问题 | Pansheng`s Blog | 不积跬步，无以至千里！</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="hexo ubuntu">
+    <meta name="description" content="1.  当执行hexo-d时报错,执行以下代码之后,重新提交就可以了1git config --global core.autocrlf false
+2. ENOSPC报错
+   在ubuntu系统中，执行hexo时，出现ENOSPC报错,可以运行来修复$ npm dedupe，如果还是不行，尝试以下命令：（亲测可行）1$ echo fs.inotify.max_user_watches = 52">
+<meta property="og:type" content="article">
+<meta property="og:title" content="hexo搭建博客常见问题">
+<meta property="og:url" content="https://wangpansheng.github.io/2016/04/24/hexo搭建博客常见问题/index.html">
+<meta property="og:site_name" content="Pansheng`s Blog">
+<meta property="og:description" content="1.  当执行hexo-d时报错,执行以下代码之后,重新提交就可以了1git config --global core.autocrlf false
+2. ENOSPC报错
+   在ubuntu系统中，执行hexo时，出现ENOSPC报错,可以运行来修复$ npm dedupe，如果还是不行，尝试以下命令：（亲测可行）1$ echo fs.inotify.max_user_watches = 52">
+<meta property="og:updated_time" content="2017-04-24T08:51:09.205Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="hexo搭建博客常见问题">
+<meta name="twitter:description" content="1.  当执行hexo-d时报错,执行以下代码之后,重新提交就可以了1git config --global core.autocrlf false
+2. ENOSPC报错
+   在ubuntu系统中，执行hexo时，出现ENOSPC报错,可以运行来修复$ npm dedupe，如果还是不行，尝试以下命令：（亲测可行）1$ echo fs.inotify.max_user_watches = 52">
+    
+        <link rel="alternative" href="/atom.xml" title="Pansheng`s Blog" type="application/atom+xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="/css/style.css?v=1.4.11">
+    <script>window.lazyScripts=[]</script>
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/images/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">Pansheng</h5>
+          <a href="mailto:好玩，好玩，就是好玩！！！" title="好玩，好玩，就是好玩！！！" class="mail">好玩，好玩，就是好玩！！！</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                日志
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                标签
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/wangpansheng" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="http://weibo.com/u/5598490525" target="_blank" >
+                <i class="icon icon-lg icon-weibo"></i>
+                微博
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/404.html"  >
+                <i class="icon icon-lg icon-link"></i>
+                公益404
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">hexo搭建博客常见问题</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">hexo搭建博客常见问题</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2016-04-24T08:47:17.000Z" itemprop="datePublished" class="page-time">
+  2016-04-24
+</time>
+
+
+            
+        </h5>
+    </div>
+
+    
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#1-当执行hexo-d时报错-执行以下代码之后-重新提交就可以了"><span class="post-toc-number">1.</span> <span class="post-toc-text">1.  当执行hexo-d时报错,执行以下代码之后,重新提交就可以了</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#2-ENOSPC报错"><span class="post-toc-number">2.</span> <span class="post-toc-text">2. ENOSPC报错</span></a></li></ol>
+        </nav>
+    </aside>
+    
+<article id="post-hexo搭建博客常见问题"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">hexo搭建博客常见问题</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2016年04月24日 16:47" datetime="2016-04-24T08:47:17.000Z"  itemprop="datePublished">2016-04-24</time>
+
+            
+
+
+            
+
+            
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h2 id="1-当执行hexo-d时报错-执行以下代码之后-重新提交就可以了"><a href="#1-当执行hexo-d时报错-执行以下代码之后-重新提交就可以了" class="headerlink" title="1.  当执行hexo-d时报错,执行以下代码之后,重新提交就可以了"></a>1.  当执行hexo-d时报错,执行以下代码之后,重新提交就可以了</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git config --global core.autocrlf false</div></pre></td></tr></table></figure>
+<h2 id="2-ENOSPC报错"><a href="#2-ENOSPC报错" class="headerlink" title="2. ENOSPC报错"></a>2. ENOSPC报错</h2><blockquote>
+<p>   在ubuntu系统中，执行hexo时，出现ENOSPC报错,可以运行来修复$ npm dedupe，如果还是不行，尝试以下命令：（亲测可行）<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ echo fs.inotify.max_user_watches = 524288 | sudo tee -a /etc/sysctl.conf &amp;&amp; sudo sysctl -p</div></pre></td></tr></table></figure></p>
+</blockquote>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    <div class="content">
+        <!--
+<span class="post-time">
+    最后更新时间：<time datetime="2017-04-24T08:51:09.205Z" itemprop="dateUpdated">2017年4月24日 16:51</time>
+</span><br>
+
+-->
+        原创文章，转载请注明出处：<a href="/2016/04/24/hexo搭建博客常见问题/" target="_blank" rel="external">https://wangpansheng.github.io/2016/04/24/hexo搭建博客常见问题/</a>
+    </div>
+    <footer>
+        <a href="https://wangpansheng.github.io">
+            <img src="/images/avatar.jpg" alt="Pansheng">
+            Pansheng
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hexo-ubuntu/">hexo ubuntu</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://wangpansheng.github.io/2016/04/24/hexo搭建博客常见问题/&title=《hexo搭建博客常见问题》 — Pansheng`s Blog&pic=https://wangpansheng.github.io/images/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://wangpansheng.github.io/2016/04/24/hexo搭建博客常见问题/&title=《hexo搭建博客常见问题》 — Pansheng`s Blog&source=攀升的学习记录" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://wangpansheng.github.io/2016/04/24/hexo搭建博客常见问题/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《hexo搭建博客常见问题》 — Pansheng`s Blog&url=https://wangpansheng.github.io/2016/04/24/hexo搭建博客常见问题/&via=https://wangpansheng.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://wangpansheng.github.io/2016/04/24/hexo搭建博客常见问题/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2016/04/24/ajax是什么/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">什么是ajax</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2016/03/18/ECMAScript发展史/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">ECMAScript发展史</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+
+        <p>
+            <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            <span>博客内容遵循 <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">知识共享 署名 - 非商业性 - 相同方式共享 4.0协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p>
+            <span>Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a></span>
+            <span>Pansheng`s Blog &copy; 2016 - 2018</span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://wangpansheng.github.io/2016/04/24/hexo搭建博客常见问题/&title=《hexo搭建博客常见问题》 — Pansheng`s Blog&pic=https://wangpansheng.github.io/images/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://wangpansheng.github.io/2016/04/24/hexo搭建博客常见问题/&title=《hexo搭建博客常见问题》 — Pansheng`s Blog&source=攀升的学习记录" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://wangpansheng.github.io/2016/04/24/hexo搭建博客常见问题/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《hexo搭建博客常见问题》 — Pansheng`s Blog&url=https://wangpansheng.github.io/2016/04/24/hexo搭建博客常见问题/&via=https://wangpansheng.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://wangpansheng.github.io/2016/04/24/hexo搭建博客常见问题/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACr0lEQVR42u3aS27kMAwFwL7/pTMHyNh+T5ScBCivGg1/VF6INMnPJz6+vh2T/7+fc3XV1bWbDzw8PLzx0u8ffHVt8jqukPmq8jXj4eHhneZdPeB+Q8/PyZ/SPuvBgoeHh/drePkmfp/rtrkxHh4e3l/kJcn0/Zl5Ip6/Yjw8PLz3efNb32NyavuCttVa8PDw8GLeJJ39qd9H+nt4eHh446562wxbu3+eoNerxcPDwzvAyzfctgW11iTbVRrGw8PDe4eXN/7bNDe/W/5ak6vw8PDwTvPyJla76bfL2jyIgIeHh/cKb9LKSn6vpeN5GMPDw8M7zcsHrXaNVeXs0UAAHh4e3uu8NgDky1oLIXlIqL8e8PDw8GLe2khTTp00/tsg8fCtgIeHh3eAt4ZZS3lzTDtkgIeHh/cmL9/i9xZnJ7+L7wM8PDy8rby1htP9fdql5OGneAoeHh7eMV6+fbfF3DZFbp/ykNDj4eHhvc5ba+q3BYuiO9dei4eHh3eMt3brSQutHahqU/P/fDHg4eHhbeK1Zda1ttbaLFhyVRSE8PDw8Lby8ovXWvhrJeC1VxyNDuDh4eFt4q218+djVZNxgeil4+Hh4R3gzVtZbWAoljUY23qoVePh4eFt4hWF0cNFirZ79RCE8PDw8I7x1gYC8hJDEoTyAkfxivHw8PAO89pEti3d5ucngSQS4eHh4R3jJeWAfOtvCxBJkXdxeAsPDw9vK++rPFpwEh4mQ1cPLw4PDw/vAC8/8iJFfoc5vi0o4+Hh4e3iTVpTbUo9KSjngephsgwPDw9vEy952Hyjz7f1djRhsUqNh4eH9wqvLVispc5JObgo5uLh4eH9At65ENL2sB4CCR4eHt4x3qTEkCfTbbF4shI8PDy8c7xJgbUdL0hCRd5O++w68PDw8FLeP8Xpc6jJfZYmAAAAAElFTkSuQmCC" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
+
+
+
+lazyScripts.push('//s95.cnzz.com/z_stat.php?id=1261513673&web_id=1261513673')
+
+</script>
+
+<script src="/js/main.min.js?v=1.4.11"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="/js/search.min.js?v=1.4.11" async></script>
+
+
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+<!-- Baidu Tongji -->
+<script>var _hmt = _hmt || []</script>
+<script async src="//hm.baidu.com/hm.js?wangpansheng"></script>
+<!-- End Baidu Tongji -->
+
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    <title>AJAX应用之HTTP | Pansheng`s Blog | 不积跬步，无以至千里！</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="ajax,http">
+    <meta name="description" content="http 协议。
+   协议就是约束，http协议是w3c制定的，用来约束客户端浏览器与web服务器进行通讯的数据格式,http 协议是基于请求，响应的协议。客户端浏览器给服务器发送一个请求，服务器给客户端一个响应
+
+http协议的数据格式分为两部分
+客户端发送到服务器的请求，称为请求的数据格式。
+服务器响应给客户端的数据，为响应的数据格式.
+
+请求的数据格式，是客户端发送给服务器的，分为四个部分">
+<meta property="og:type" content="article">
+<meta property="og:title" content="AJAX应用之HTTP">
+<meta property="og:url" content="https://wangpansheng.github.io/2016/03/14/AJAX应用之HTTP/index.html">
+<meta property="og:site_name" content="Pansheng`s Blog">
+<meta property="og:description" content="http 协议。
+   协议就是约束，http协议是w3c制定的，用来约束客户端浏览器与web服务器进行通讯的数据格式,http 协议是基于请求，响应的协议。客户端浏览器给服务器发送一个请求，服务器给客户端一个响应
+
+http协议的数据格式分为两部分
+客户端发送到服务器的请求，称为请求的数据格式。
+服务器响应给客户端的数据，为响应的数据格式.
+
+请求的数据格式，是客户端发送给服务器的，分为四个部分">
+<meta property="og:updated_time" content="2017-04-24T09:15:30.753Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="AJAX应用之HTTP">
+<meta name="twitter:description" content="http 协议。
+   协议就是约束，http协议是w3c制定的，用来约束客户端浏览器与web服务器进行通讯的数据格式,http 协议是基于请求，响应的协议。客户端浏览器给服务器发送一个请求，服务器给客户端一个响应
+
+http协议的数据格式分为两部分
+客户端发送到服务器的请求，称为请求的数据格式。
+服务器响应给客户端的数据，为响应的数据格式.
+
+请求的数据格式，是客户端发送给服务器的，分为四个部分">
+    
+        <link rel="alternative" href="/atom.xml" title="Pansheng`s Blog" type="application/atom+xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="/css/style.css?v=1.4.11">
+    <script>window.lazyScripts=[]</script>
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/images/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">Pansheng</h5>
+          <a href="mailto:好玩，好玩，就是好玩！！！" title="好玩，好玩，就是好玩！！！" class="mail">好玩，好玩，就是好玩！！！</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                日志
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                标签
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/wangpansheng" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="http://weibo.com/u/5598490525" target="_blank" >
+                <i class="icon icon-lg icon-weibo"></i>
+                微博
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/404.html"  >
+                <i class="icon icon-lg icon-link"></i>
+                公益404
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">AJAX应用之HTTP</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">AJAX应用之HTTP</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2016-03-14T11:42:23.000Z" itemprop="datePublished" class="page-time">
+  2016-03-14
+</time>
+
+
+            
+        </h5>
+    </div>
+
+    
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#http-协议。"><span class="post-toc-number">1.</span> <span class="post-toc-text">http 协议。</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#http协议的数据格式分为两部分"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">http协议的数据格式分为两部分</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-get请求数据格式"><span class="post-toc-number">1.1.1.</span> <span class="post-toc-text">1.    get请求数据格式</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-post-请求的数据格式的介绍"><span class="post-toc-number">1.1.2.</span> <span class="post-toc-text">2.    post 请求的数据格式的介绍</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#3-get-跟post-的区别："><span class="post-toc-number">1.1.3.</span> <span class="post-toc-text">3.  get  跟post 的区别：</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#4-服务器响应给客户端的数据也分为四个部分"><span class="post-toc-number">1.1.4.</span> <span class="post-toc-text">4.  服务器响应给客户端的数据也分为四个部分</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#1-响应首行"><span class="post-toc-number">1.1.4.1.</span> <span class="post-toc-text">1. 响应首行</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#2-响应头"><span class="post-toc-number">1.1.4.2.</span> <span class="post-toc-text">2.  响应头</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#3-响应空行"><span class="post-toc-number">1.1.4.3.</span> <span class="post-toc-text">3.  响应空行</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#4-响应体"><span class="post-toc-number">1.1.4.4.</span> <span class="post-toc-text">4.  响应体</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#5-响应的头，Refresh-的响应头"><span class="post-toc-number">1.1.4.5.</span> <span class="post-toc-text">5.  响应的头，Refresh 的响应头</span></a></li></ol></li></ol></li></ol></li></ol>
+        </nav>
+    </aside>
+    
+<article id="post-AJAX应用之HTTP"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">AJAX应用之HTTP</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2016年03月14日 19:42" datetime="2016-03-14T11:42:23.000Z"  itemprop="datePublished">2016-03-14</time>
+
+            
+
+
+            
+
+            
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h1 id="http-协议。"><a href="#http-协议。" class="headerlink" title="http 协议。"></a>http 协议。</h1><blockquote>
+<p>   协议就是约束，http协议是w3c制定的，用来约束客户端浏览器与web服务器进行通讯的数据格式,http 协议是基于请求，响应的协议。客户端浏览器给服务器发送一个请求，服务器给客户端一个响应</p>
+</blockquote>
+<h2 id="http协议的数据格式分为两部分"><a href="#http协议的数据格式分为两部分" class="headerlink" title="http协议的数据格式分为两部分"></a>http协议的数据格式分为两部分</h2><ul>
+<li>客户端发送到服务器的请求，称为请求的数据格式。</li>
+<li><p>服务器响应给客户端的数据，为响应的数据格式.</p>
+</li>
+<li><p>请求的数据格式，是客户端发送给服务器的，分为四个部分</p>
+<ol>
+<li>请求首行</li>
+<li>请求头</li>
+<li>请求空行</li>
+<li>请求体</li>
+</ol>
+</li>
+</ul>
+<h3 id="1-get请求数据格式"><a href="#1-get请求数据格式" class="headerlink" title="1.    get请求数据格式"></a>1.    get请求数据格式</h3><ul>
+<li><p>请求首行</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">GET /day08/code/01http/01get.html HTTP/1.1</div><div class="line">[GET 告诉服务器提交方式]</div><div class="line">[/day08/code/01http/01get.html 告诉服务器，我要去请求的资源的地址]</div><div class="line">[HTTP/1.1 协议的版本] 有两个版本，</div><div class="line">1.0</div><div class="line">1.1</div></pre></td></tr></table></figure>
+</li>
+<li><p>请求头 </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">Host	127.0.0.1	【请求头的名称，请求头的值】</div><div class="line">Cache-Control	max-age=0	这个做缓存控制的.</div><div class="line">Upgrade-Insecure-Requests	1   没有用过.</div><div class="line">User-Agent	Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.143 Safari/537.36 	这个是告诉服务器，我客户端浏览器的版本，操作系统的版本</div><div class="line">Accept	text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8	接收，告诉服务器，我客户端可以接收那些数据格式.</div><div class="line">Referer	http://127.0.0.1/day08/code/01http/</div><div class="line">Accept-Encoding	gzip, deflate, sdch   接收的压缩格式. gzip</div><div class="line">Accept-Language	zh-CN,zh;q=0.8		接收的语言</div><div class="line">If-None-Match	&quot;7700000000217a-96-548afe60e947a&quot;</div><div class="line">If-Modified-Since	Fri, 17 Feb 2017 01:33:19 GMT</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="2-post-请求的数据格式的介绍"><a href="#2-post-请求的数据格式的介绍" class="headerlink" title="2.    post 请求的数据格式的介绍"></a>2.    post 请求的数据格式的介绍</h3><ul>
+<li><p>请求首行</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">POST /day08/code/01http/02post.php HTTP/1.1</div></pre></td></tr></table></figure>
+</li>
+<li><p>请求头</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line">Host: 127.0.0.1</div><div class="line">内容长度，指的 请求体的长度</div><div class="line">Content-Length: 21</div><div class="line">缓存的</div><div class="line">Cache-Control: max-age=0</div><div class="line">请求的站点的主域名</div><div class="line">Origin: http://127.0.0.1</div><div class="line">Upgrade-Insecure-Requests: 1</div><div class="line">告诉服务器客户端浏览器的版本，操作系统的版本.</div><div class="line">User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.143 Safari/537.36</div><div class="line">//这个是post 提交独有第一个请求头，如果发送到服务器的数据有中文，会吧中文进行编码</div><div class="line">在发送给服务器，服务器得到数据会自动解码.</div><div class="line">Content-Type: application/x-www-form-urlencoded</div><div class="line">//接收的数据格式</div><div class="line">Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8</div><div class="line">告诉服务器，请求来自于那个页面</div><div class="line">Referer: http://127.0.0.1/day08/code/01http/02post.html</div><div class="line">接收压缩格式</div><div class="line">Accept-Encoding: gzip, deflate</div><div class="line">接收的语言</div><div class="line">Accept-Language: zh-CN,zh;q=0.8</div><div class="line">请求空行 [用来将请求头跟请求体进行一个区分，方便服务器解析数据]</div></pre></td></tr></table></figure>
+</li>
+<li><p>请求体[客户端发送到服务器的数据.]</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">username=dasfadsfdafs</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="3-get-跟post-的区别："><a href="#3-get-跟post-的区别：" class="headerlink" title="3.  get  跟post 的区别："></a>3.  get  跟post 的区别：</h3><ol>
+<li><p>get 提交请求的数据都在地址栏中，相对来不安全。</p>
+</li>
+<li><p>get 请求的数据都请求地址的后面，对请求的数据的大小由限制，限制大概1kb</p>
+</li>
+<li><p>get 没有请求体</p>
+</li>
+<li><p>ost 请求的数据在请求体当中，相对来说安全</p>
+</li>
+<li><p>ost 请求的数据大小没有限制。文件上传，这个必须是post 方式提交</p>
+</li>
+<li><p>ost 提交有一个特殊的请求头:<code>Content-Type:application/x-www-form-urlencoded</code><br>可以对请求的数据包含中文的数据进行编码.</p>
+</li>
+<li><p>get 的请求没有没有请求体，也会少一些请求头，所以它传递到服务端的数据要少一些。性能要高一些。</p>
+</li>
+</ol>
+<h3 id="4-服务器响应给客户端的数据也分为四个部分"><a href="#4-服务器响应给客户端的数据也分为四个部分" class="headerlink" title="4.  服务器响应给客户端的数据也分为四个部分"></a>4.  服务器响应给客户端的数据也分为四个部分</h3><ol>
+<li>响应首行</li>
+<li>响应头</li>
+<li>响应空行</li>
+<li>响应体</li>
+</ol>
+<h4 id="1-响应首行"><a href="#1-响应首行" class="headerlink" title="1. 响应首行"></a>1. 响应首行</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">协议的版本</div><div class="line">200 状态吗 代表ok</div><div class="line">HTTP/1.1 200 OK</div></pre></td></tr></table></figure>
+<ul>
+<li>实际上我们开发的过程当中还有很多的状态吗<br>404 代表请求的资源没有找到，以后假设出现404<br>500 代表服务器内部错误<br>405 代表请求的方式不支持,如果我的一个php接收post 方式的数据 $_POST<br>然后你以get 方式去请求，就会出现405<br>304 请求的资源没有发生改变. 这个是用来做缓存用的.<br>当我第一次访问<a href="http://127.0.0.1/day08/code/01http/01get.html" target="_blank" rel="external">http://127.0.0.1/day08/code/01http/01get.html</a><br>这个页面，服务器会给我一个响应头.<br>Last-Modified:Fri, 17 Feb 2017 01:33:19 GMT<br>告诉客户端浏览器，这个文件的最后修改时间.</li>
+</ul>
+<p>当我再次去访问<a href="http://127.0.0.1/day08/code/01http/01get.html" target="_blank" rel="external">http://127.0.0.1/day08/code/01http/01get.html</a><br>会给服务器协议这样的一个请求头<br>If-Modified-Since:Fri, 17 Feb 2017 01:33:19 GMT<br>这个时候服务器就会给客户端一个304 的状态吗，你请求的这个资源<br><a href="http://127.0.0.1/day08/code/01http/01get.html" target="_blank" rel="external">http://127.0.0.1/day08/code/01http/01get.html</a> 没有做任何的修改<br>客户端浏览器得到是304，它就会从本地去读取页面</p>
+<h4 id="2-响应头"><a href="#2-响应头" class="headerlink" title="2.  响应头"></a>2.  响应头</h4><p>告诉客户端服务器端的时间.<br>Date: Fri, 17 Feb 2017 01:35:58 GMT<br>告诉客户端服务器的版本<br>Server: Apache/2.2.21 (Win32) PHP/5.3.10<br>文件的最后修改时间<br>Last-Modified: Fri, 17 Feb 2017 01:33:19 GMT</p>
+<p>ETag: “7700000000217a-96-548afe60e947a”<br>Accept-Ranges: bytes<br>内容的长度<br>Content-Length: 150<br>//内容类型，告诉客户端浏览器，我给你返回的是一个文本，html 格式的文本,<br>客户端浏览器得到这个，就会以html 的方式去解析.<br>Content-Type: text/html;<br>header(“Content-Type:text/html;charset=utf-8”)</p>
+<h4 id="3-响应空行"><a href="#3-响应空行" class="headerlink" title="3.  响应空行"></a>3.  响应空行</h4><h4 id="4-响应体"><a href="#4-响应体" class="headerlink" title="4.  响应体"></a>4.  响应体</h4><p>客户端发送到服务器的时候有一个请求头叫做<br>User-Agent:告诉服务器客户端浏览器的版本，操作系统的版本.</p>
+<h4 id="5-响应的头，Refresh-的响应头"><a href="#5-响应的头，Refresh-的响应头" class="headerlink" title="5.  响应的头，Refresh 的响应头"></a>5.  响应的头，Refresh 的响应头</h4><p>服务器给客户端，如果客户端得到这个响应头，它会自动跳转页面.</p>
+<p>Referer 的头，告诉服务器，请求来自于那个页面.<br>    1:广告流量统计，统计到我的网站在那个网站上面打的广告更加有效果。</p>
+<pre><code>2：防盗链，bs 架构，我们可以看到后台的链接，一个连接对应一个资源。
+</code></pre><p> 互联网上创业，有些软件做功能，有些软件做内容。<br>     一个连接对应一个资源 ，视频行业，最砸钱，谁有视频的资源。视频的资源<br> 现在都要买版权，都要收费。</p>
+<pre><code>www.kuaibo.com ，进入到快播的一个页面，
+</code></pre><p> 快播视频播放，我就可以引入优酷上面的一个视频资源。<br>    这个时候会给优酷发送一个请求，就会优酷携带一个请求头<br>    Referer:www.kuaibo.com<br>    我在优酷的后台我就可以判断，如果你请求的Referer 的值不是来自于优酷自己的站点<br>我让你跳转优酷的首页，看看广告.</p>
+<pre><code>http 协议 里面面试的时候一些重点的东西：
+        1:get 跟post 的区别
+        2:请求的数据格式，
+                特殊的请求头
+                post 提交有一个特殊的请求头
+                Content-Type:&quot;application/-w-form-data&quot;
+        3:响应的数据格式。
+                你知道哪些常见的状态吗
+                200
+                404
+                405
+                500
+                304   请求的资源没有发生任何改变，浏览器从缓存里面去找
+                302   请求重定向
+
+                http://www.tieba.com
+
+                这个地址会给我一个302 的状态吗
+                它还会给以location 的地址
+
+                302
+                Location:http://tieba.baidu.com  //响应头：地址
+
+ 你在请求开发的过程当成碰到什么乱码问题没有
+        1：客户端的数据发送到服务器，
+               1:如果说有中文，我们一般使用post 方式提交
+
+                //使用js 对魔兽.exe 进行编码. utf-8
+                //服务器根据这个去进行解码. 以utf-8 去解码
+               2:&lt;a href=&quot;adsfadsf.php?fileName=&quot;魔兽.exe&quot;&gt;问价下载 &lt;/a&gt;
+        2：服务器的数据响应给客户端。
+
+              1： 当前文件采用的是什么编码
+              2:  然后 给客户端一个响应头 Content-Type:text/html;charset=当前文件的编码
+</code></pre>
+        </div>
+
+        <blockquote class="post-copyright">
+    <div class="content">
+        <!--
+<span class="post-time">
+    最后更新时间：<time datetime="2017-04-24T09:15:30.753Z" itemprop="dateUpdated">2017年4月24日 17:15</time>
+</span><br>
+
+-->
+        原创文章，转载请注明出处：<a href="/2016/03/14/AJAX应用之HTTP/" target="_blank" rel="external">https://wangpansheng.github.io/2016/03/14/AJAX应用之HTTP/</a>
+    </div>
+    <footer>
+        <a href="https://wangpansheng.github.io">
+            <img src="/images/avatar.jpg" alt="Pansheng">
+            Pansheng
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ajax/">ajax</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/http/">http</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://wangpansheng.github.io/2016/03/14/AJAX应用之HTTP/&title=《AJAX应用之HTTP》 — Pansheng`s Blog&pic=https://wangpansheng.github.io/images/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://wangpansheng.github.io/2016/03/14/AJAX应用之HTTP/&title=《AJAX应用之HTTP》 — Pansheng`s Blog&source=攀升的学习记录" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://wangpansheng.github.io/2016/03/14/AJAX应用之HTTP/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《AJAX应用之HTTP》 — Pansheng`s Blog&url=https://wangpansheng.github.io/2016/03/14/AJAX应用之HTTP/&via=https://wangpansheng.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://wangpansheng.github.io/2016/03/14/AJAX应用之HTTP/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2016/03/18/ECMAScript发展史/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">ECMAScript发展史</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2016/03/10/hexo配置个人博客站点/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">快速搭建hexo个人博客站点</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+
+        <p>
+            <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            <span>博客内容遵循 <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">知识共享 署名 - 非商业性 - 相同方式共享 4.0协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p>
+            <span>Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a></span>
+            <span>Pansheng`s Blog &copy; 2016 - 2018</span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://wangpansheng.github.io/2016/03/14/AJAX应用之HTTP/&title=《AJAX应用之HTTP》 — Pansheng`s Blog&pic=https://wangpansheng.github.io/images/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://wangpansheng.github.io/2016/03/14/AJAX应用之HTTP/&title=《AJAX应用之HTTP》 — Pansheng`s Blog&source=攀升的学习记录" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://wangpansheng.github.io/2016/03/14/AJAX应用之HTTP/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《AJAX应用之HTTP》 — Pansheng`s Blog&url=https://wangpansheng.github.io/2016/03/14/AJAX应用之HTTP/&via=https://wangpansheng.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://wangpansheng.github.io/2016/03/14/AJAX应用之HTTP/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACK0lEQVR42u3aS1LDQAwFwNz/0uYAIcOT5FDlmfaKMtiZzkLo93rF1/V2vd9f31m/+dOzN18YGBiPZVzLq3e45P3Jm5OzYWBgnMNIQuGnw+VP5WE3PxsGBgZGnsDlSV6Ox8DAwJgzqoldr0jGwMDAyIvY9cdPkr9/rcUxMDAeyLiryPzGz1+Zb2BgYDyKcRWvvGTNU8kbToWBgbE1Iw9wPVKvYVc9DwYGxt6MScCdFJn54kX0RWNgYBzDmFSL6wQxX9qojjZ/CbgYGBgHMHoJXH7c5D35eBUDA+MExmTBojdunJS4hQUODAyMYxhJeL3rKPnflyeuGBgYD2fkDbLkpdX22bzR9nEwgIGBsTUjD68JL1/amLwZAwNjb8ZkDJkvhOVDhVGjDQMDY2tG7+OTceP6oEkJnT+LgYFxDqMa5uZjy+rotPDfAwMDYzvGXata1fI1/1LKIRgDA2MLxmSIOGnD5fej32JgYGzNSErZfLUiL4+r44HqaBMDA2M/RnXlq9q2y0Nnnmh+TBAxMDCOYeRDyl7TrTcYiJYtMDAwtmZM2mFJStdb5iivWWBgYGzHuIpXdUWjN34op6cYGBhbM3rBrjoeSErTyYgUAwPjBEYSZCdpYo9R/r4xMDAOYPQCZXXZImqctU6LgYGBUS1K53sfeRMQAwMDY1IH52VqNbn8YxKLgYGxKaOawFVTw/UR80+8od2GgYHxQMa8l9UbWOZHnAxKMTAwHs74AZke2xnc2kwhAAAAAElFTkSuQmCC" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
+
+
+
+lazyScripts.push('//s95.cnzz.com/z_stat.php?id=1261513673&web_id=1261513673')
+
+</script>
+
+<script src="/js/main.min.js?v=1.4.11"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="/js/search.min.js?v=1.4.11" async></script>
+
+
+
+
+
+
+
+</body>
+</html>

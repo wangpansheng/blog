@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+<!-- Baidu Tongji -->
+<script>var _hmt = _hmt || []</script>
+<script async src="//hm.baidu.com/hm.js?wangpansheng"></script>
+<!-- End Baidu Tongji -->
+
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    <title>前后端渲染的对比 | Pansheng`s Blog | 不积跬步，无以至千里！</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="服务端渲染">
+    <meta name="description" content="服务端渲染是通过后端模板引擎编译成html,css,js,然后回传给前端来进行显示；而前端渲染则是将整个生成逻辑代码全部回传前端，再由客户端生成用户界面。
+
+为什么会有服务端渲染与客户端渲染早期，我们每一个页面都是直接由html，css，js实现的，每一个页面彼此之间相当于是独立的，当我们的网站应用足够大的时候，每当我们需要修改网站的内容时，我们需要更改很多的代码，非常麻烦。
+那么后来，我们">
+<meta property="og:type" content="article">
+<meta property="og:title" content="前后端渲染的对比">
+<meta property="og:url" content="https://wangpansheng.github.io/2017/05/14/前后端渲染的对比/index.html">
+<meta property="og:site_name" content="Pansheng`s Blog">
+<meta property="og:description" content="服务端渲染是通过后端模板引擎编译成html,css,js,然后回传给前端来进行显示；而前端渲染则是将整个生成逻辑代码全部回传前端，再由客户端生成用户界面。
+
+为什么会有服务端渲染与客户端渲染早期，我们每一个页面都是直接由html，css，js实现的，每一个页面彼此之间相当于是独立的，当我们的网站应用足够大的时候，每当我们需要修改网站的内容时，我们需要更改很多的代码，非常麻烦。
+那么后来，我们">
+<meta property="og:updated_time" content="2017-05-14T11:08:46.640Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="前后端渲染的对比">
+<meta name="twitter:description" content="服务端渲染是通过后端模板引擎编译成html,css,js,然后回传给前端来进行显示；而前端渲染则是将整个生成逻辑代码全部回传前端，再由客户端生成用户界面。
+
+为什么会有服务端渲染与客户端渲染早期，我们每一个页面都是直接由html，css，js实现的，每一个页面彼此之间相当于是独立的，当我们的网站应用足够大的时候，每当我们需要修改网站的内容时，我们需要更改很多的代码，非常麻烦。
+那么后来，我们">
+    
+        <link rel="alternative" href="/atom.xml" title="Pansheng`s Blog" type="application/atom+xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="/css/style.css?v=1.4.11">
+    <script>window.lazyScripts=[]</script>
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/images/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">Pansheng</h5>
+          <a href="mailto:好玩，好玩，就是好玩！！！" title="好玩，好玩，就是好玩！！！" class="mail">好玩，好玩，就是好玩！！！</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                日志
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                标签
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/wangpansheng" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="http://weibo.com/u/5598490525" target="_blank" >
+                <i class="icon icon-lg icon-weibo"></i>
+                微博
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/404.html"  >
+                <i class="icon icon-lg icon-link"></i>
+                公益404
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">前后端渲染的对比</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">前后端渲染的对比</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2017-05-14T11:01:13.000Z" itemprop="datePublished" class="page-time">
+  2017-05-14
+</time>
+
+
+            
+        </h5>
+    </div>
+
+    
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#为什么会有服务端渲染与客户端渲染"><span class="post-toc-number">1.</span> <span class="post-toc-text">为什么会有服务端渲染与客户端渲染</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#从-后端渲染-到-前端渲染-，有什么变化"><span class="post-toc-number">2.</span> <span class="post-toc-text">从 后端渲染 到 前端渲染 ，有什么变化</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#结语"><span class="post-toc-number">3.</span> <span class="post-toc-text">结语</span></a></li></ol>
+        </nav>
+    </aside>
+    
+<article id="post-前后端渲染的对比"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">前后端渲染的对比</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2017年05月14日 19:01" datetime="2017-05-14T11:01:13.000Z"  itemprop="datePublished">2017-05-14</time>
+
+            
+
+
+            
+
+            
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <blockquote>
+<p>  服务端渲染是通过后端模板引擎编译成html,css,js,然后回传给前端来进行显示；而前端渲染则是将整个生成逻辑代码全部回传前端，再由客户端生成用户界面。</p>
+</blockquote>
+<h2 id="为什么会有服务端渲染与客户端渲染"><a href="#为什么会有服务端渲染与客户端渲染" class="headerlink" title="为什么会有服务端渲染与客户端渲染"></a>为什么会有服务端渲染与客户端渲染</h2><p>早期，我们每一个页面都是直接由html，css，js实现的，每一个页面彼此之间相当于是独立的，当我们的网站应用足够大的时候，每当我们需要修改网站的内容时，我们需要更改很多的代码，非常麻烦。</p>
+<p>那么后来，我们聪明的程序员就想到了，使用代码生成代码，就是后端的模板引擎，人们开始广泛使用模板代替手写html，大大减少的前端的工作量。通过代码生成代码，其实就是编译，基于html等基础语言，做出了更高层次的抽象封装，增加了易用性。</p>
+<p>后来h5,c3的崛起，再加上客户端硬件性能的提升，我们开始通过前端模板引擎，来在客户端渲染页面。</p>
+<p>对待模板，angular，vue，react的态度都不一样。</p>
+<p><strong>前后端真正解耦，前端专注于UI视图,后台专注于数据处理，通过设计好的api交互，这是未来的趋势。</strong></p>
+<h2 id="从-后端渲染-到-前端渲染-，有什么变化"><a href="#从-后端渲染-到-前端渲染-，有什么变化" class="headerlink" title="从 后端渲染 到 前端渲染 ，有什么变化"></a>从 后端渲染 到 前端渲染 ，有什么变化</h2><ul>
+<li>计算任务的变化</li>
+</ul>
+<blockquote>
+<p>  原来由后端执行的渲染任务，现在放在了前端来做，降低了多用户同时访问时服务端的压力，然后端专注做后端的事情，由于客户端硬件的发展，前端处理起来没有什么问题。</p>
+</blockquote>
+<ul>
+<li>放弃前端权限</li>
+</ul>
+<blockquote>
+<p>  将整个页面逻辑，交给客户端以后，会出现劫持的情况，比如某些运营商劫持之后，投放广告。俗话说的好<strong>一切在前端谈安全都是耍流氓</strong>，后端不能轻信前端发来的数据，一切数据都需要过滤与验证，最好使用ssl，屏蔽XSS。</p>
+</blockquote>
+<h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><p><strong>总之一句话，后端渲染针对seo比较友好，前端渲染，可以减轻服务端的压力，提升服务器的性能，而且可以实现前后端分离！</strong></p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    <div class="content">
+        <!--
+<span class="post-time">
+    最后更新时间：<time datetime="2017-05-14T11:08:46.640Z" itemprop="dateUpdated">2017年5月14日 19:08</time>
+</span><br>
+
+-->
+        原创文章，转载请注明出处：<a href="/2017/05/14/前后端渲染的对比/" target="_blank" rel="external">https://wangpansheng.github.io/2017/05/14/前后端渲染的对比/</a>
+    </div>
+    <footer>
+        <a href="https://wangpansheng.github.io">
+            <img src="/images/avatar.jpg" alt="Pansheng">
+            Pansheng
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/服务端渲染/">服务端渲染</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://wangpansheng.github.io/2017/05/14/前后端渲染的对比/&title=《前后端渲染的对比》 — Pansheng`s Blog&pic=https://wangpansheng.github.io/images/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://wangpansheng.github.io/2017/05/14/前后端渲染的对比/&title=《前后端渲染的对比》 — Pansheng`s Blog&source=攀升的学习记录" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://wangpansheng.github.io/2017/05/14/前后端渲染的对比/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《前后端渲染的对比》 — Pansheng`s Blog&url=https://wangpansheng.github.io/2017/05/14/前后端渲染的对比/&via=https://wangpansheng.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://wangpansheng.github.io/2017/05/14/前后端渲染的对比/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2017/07/11/css变形/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">css变形</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2017/04/02/ubuntu常用软件部署/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">ubuntu常用软件部署</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+
+        <p>
+            <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            <span>博客内容遵循 <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">知识共享 署名 - 非商业性 - 相同方式共享 4.0协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p>
+            <span>Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a></span>
+            <span>Pansheng`s Blog &copy; 2016 - 2018</span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://wangpansheng.github.io/2017/05/14/前后端渲染的对比/&title=《前后端渲染的对比》 — Pansheng`s Blog&pic=https://wangpansheng.github.io/images/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://wangpansheng.github.io/2017/05/14/前后端渲染的对比/&title=《前后端渲染的对比》 — Pansheng`s Blog&source=攀升的学习记录" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://wangpansheng.github.io/2017/05/14/前后端渲染的对比/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《前后端渲染的对比》 — Pansheng`s Blog&url=https://wangpansheng.github.io/2017/05/14/前后端渲染的对比/&via=https://wangpansheng.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://wangpansheng.github.io/2017/05/14/前后端渲染的对比/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACuUlEQVR42u3a0W7qMBAEUP7/p1vpvlYkM7txy5VOnlAgwSdItpnd1ys+vv4d1+d/fub6qnfvtnd74MDDw8MbDf3dcf1l11ddP4L8Dqtr8fDw8I7x8kk/oV4Pol0Mksf99jweHh7en/KSwbWDSLbdeHh4eP8vr40M8qhith3Hw8PD+1teMhFfn0/C1naKfyDIwMPDwzvAawtgn/D6YH0PDw8Pb1FVz+OAfVlr88m3d8DDw8M7wMsj2nYGzpulrq9Kzt+MHA8PD+9RXhue5iHsrJGrfXw3r/Hw8PAO8Nq2gM1//FnrVdvsdZNS4+Hh4a15+cVRkX4dUiRb82FPBB4eHt5hXtsi0DYTbHj5CPHw8PBO8PatTm3A2j6INizGw8PD+03eLCDYxL6b7XLSXoCHh4d3gpdM+rNmrDyuzWHDngg8PDy8A7w2qG232nkTVb7ARLEFHh4e3gFe2zI1K/Pnge8m5L3JqvHw8PAe4p3bKCePKS9oDZcTPDw8vMO8p6bmNsJIlpBZuQ4PDw/vBK+NA6Lug7hwNSuVtVEvHh4e3rO8PBoYlqDKh5IvVNFygoeHh3eMN0POpvJ9xFC8xsPDwzvA20y7s7LWbEl4xUcURuDh4eEteG2xKpnQ98FrvvDctDjg4eHhHeDNYAk7WSpyTMurt9R4eHh4Ja8NC/IWq6TQNQs+2q02Hh4e3rO8NlRN3s2n9WdHEpXB8PDw8B7lbQpdqzJVkje3+TQeHh7eAd5XeSS3zifutp2r/hnw8PDwDvBm024bVeTxxKb1Kv8x8PDw8Pa8ZDGYFbdmMXH7bh1G4OHh4T3Em22UE8Bsgz57ZHh4eHifydsXvfLN8SbgwMPDw/sEXr4Y5AWtZKPcjgQPDw/vd3hJGLGJJ9oWq9ndovwDDw8Pb83bFMDaL2430OcCZTw8PLwR7xu43pKXeXwRpQAAAABJRU5ErkJggg==" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
+
+
+
+lazyScripts.push('//s95.cnzz.com/z_stat.php?id=1261513673&web_id=1261513673')
+
+</script>
+
+<script src="/js/main.min.js?v=1.4.11"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="/js/search.min.js?v=1.4.11" async></script>
+
+
+
+
+
+
+
+</body>
+</html>
